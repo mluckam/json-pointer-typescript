@@ -75,7 +75,7 @@ export default class Ptr {
    */
   public eval(instance: any): any {
     for (const token of this.tokens) {
-      if (instance.hasOwnProperty(token)) {
+      if (Object.prototype.hasOwnProperty.call(instance, token)) {
         instance = instance[token];
       } else {
         throw new EvalError(instance, token);
